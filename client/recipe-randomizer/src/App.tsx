@@ -30,7 +30,7 @@ const App: React.FC = () => {
     }
   };
   const clearRecipes = () => {
-    setRecipes([]); // Clear the recipes state
+    setRecipes([]);
   };
 
   return (

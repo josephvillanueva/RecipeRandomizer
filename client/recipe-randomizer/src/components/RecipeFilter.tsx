@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 interface RecipeFilterProps {
   fetchRecipes: (ingredients: string) => void;
-  clearRecipes: () => void; // New prop to clear recipes
+  clearRecipes: () => void;
 }
 
 const RecipeFilter: React.FC<RecipeFilterProps> = ({
@@ -18,8 +18,8 @@ const RecipeFilter: React.FC<RecipeFilterProps> = ({
   };
 
   const handleClear = () => {
-    setInputValue(""); // Clear input
-    clearRecipes(); // Clear recipes from parent
+    setInputValue("");
+    clearRecipes();
   };
 
   return (
