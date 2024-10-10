@@ -1,0 +1,11 @@
+.logo {
+    height: 6em;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 2em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
