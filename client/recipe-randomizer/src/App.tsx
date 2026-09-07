@@ -14,10 +14,17 @@ const App: React.FC = () => {
     process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 
   const fetchRecipes = async (ingredients: string) => {
+    const trimmed = ingredients.trim();
+    if (!trimmed) {
+      setRecipes([]);
+      return;
+    }
+
     try {
-      const response = await fetch(
-        `${API_BASE_URL}/api/recipes/filter?ingredients=${ingredients}`
-      );
+      const url = new URL("/api/recipes/filter", API_BASE_URL);
+      url.searchParams.set("ingredients", trimmed);
+
+      const response = await fetch(url.toString());
 
       if (!response.ok) {
         throw new Error(`API request failed with status ${response.status}`);
